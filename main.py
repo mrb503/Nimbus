@@ -20,10 +20,10 @@ async def on_message(message):
     return
 
   
-  if message.content.startswith("!hello"):
+  if (cmd == '!hello'):
     await message.channel.send("Hi there! I'm Nimbus, your very own weather bot :)")
 
-  elif message.content.startswith("!hi"):
+  elif (cmd == '!hi'):
     await message.channel.send(city)
 
 
