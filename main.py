@@ -1,6 +1,7 @@
 import discord
 import os
 
+
 client = discord.Client()
 
 @client.event
@@ -9,10 +10,21 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
+
+  chat = message.content.lower().split()
+
+  cmd = chat[0]
+  city = " ".join(chat[1:])
+  
   if message.author == client.user:
     return
+
   
-  if message.content.startswith("$hello"):
-    await message.channel.send("Hello :) !")
+  if message.content.startswith("!hello"):
+    await message.channel.send("Hi there! I'm Nimbus, your very own weather bot :)")
+
+  elif message.content.startswith("!hi"):
+    await message.channel.send(city)
+
 
 client.run(os.getenv('TOKEN'))
