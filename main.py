@@ -7,7 +7,7 @@ client = discord.Client()
 
 @client.event
 async def on_ready():
-  await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='the clouds'))
+  await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='the clouds ☁️ '))
   print("We have logged in as {0.user}".format(client))
   
 
