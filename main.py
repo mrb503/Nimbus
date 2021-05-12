@@ -34,6 +34,8 @@ async def on_message(message):
     descr = weather.getCurrentDescr(data)
     if basic == 'Rain':
       icon = '☔ '
+    elif basic == 'Drizzle':
+      icon = '🌧 '
     elif basic == 'Mist':
       icon = '🌫 '
     elif basic == 'Clouds':
@@ -42,8 +44,11 @@ async def on_message(message):
       icon = '☀️ ' 
     elif basic == 'Snow':
       icon = '❄️ '
+    elif basic == 'Thunderstorm':
+      icon = '⛈ '
     else:
       icon = ' '
+    
     await message.channel.send(icon + "It's currently " + descr + "!")
 
 client.run(os.getenv('TOKEN'))
