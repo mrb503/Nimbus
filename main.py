@@ -7,7 +7,9 @@ client = discord.Client()
 
 @client.event
 async def on_ready():
+  await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='the clouds'))
   print("We have logged in as {0.user}".format(client))
+  
 
 @client.event
 async def on_message(message):
@@ -25,9 +27,12 @@ async def on_message(message):
   if (cmd == '!hello'):
     await message.channel.send("Hi there! I'm Nimbus, your very own weather bot :)")
 
+  elif (cmd == '!commands'):
+    await message.channel.send("Here's what I can do: \n!temp - get the current temperature \n!current - get the current conditions")
+  
   elif (cmd == '!temp'):
     temp = weather.getTemperature(data)
-    await message.channel.send("{:.2f}".format(temp) + " °F")
+    await message.channel.send("🌡 {:.2f}".format(temp) + " °F")
 
   elif (cmd == '!current'):
     basic = weather.getCurrentBasic(data)
