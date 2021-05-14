@@ -1,6 +1,6 @@
 # Nimbus
 
-A little Discord bot that lets you check the weather anywhere! ☀️🌧❄️
+Say hello to Nimbus, a little Discord bot that lets you check the weather anywhere! ☀️🌧❄️
 
 ## Weather Command Syntax
 
