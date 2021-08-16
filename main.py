@@ -41,7 +41,7 @@ async def on_message(message):
       icon = '☔ '
     elif basic == 'Drizzle':
       icon = '🌧 '
-    elif basic in ('Haze', 'Fog'):
+    elif basic in ('Haze', 'Fog', 'Mist'):
       icon = '🌫 '
     elif basic == 'Clouds':
       icon = '☁️ '
